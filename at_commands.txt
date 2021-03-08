@@ -1,0 +1,23 @@
+
+AT+GMR
+
+AT+CWMODE=1
+AT+CWMODE?
+AT+CWLAP
+AT+CWJAP="eir18941350-2.4G","2jgwpryd"
+
+-----
+AT+GMR
+AT+CWMODE=1
+AT+CWMODE?
+AT+CWLAP
+AT+CWJAP="aaa","bbb"
+
+AT+CIPSTART="TCP","fernandocosentino.net",80
+AT+CIPSEND=57
+
+GET /hello.html HTTP/1.1
+Host: fernandocosentino.net
+
+
+AT+CIPCLOSE
