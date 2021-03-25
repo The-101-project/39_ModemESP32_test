@@ -49,6 +49,23 @@ AT+CIPCLOSE
 ```
 
 
+## Test sending data to URL
+
+Using the preprogrammed factory flash image: 
+ *  Connect an mbed board with this repository firmware, to ESP32 based [n-PRO-20](http://www.n-blocks.net/nmodules/doku.php?id=nblocks:n-pro-20)
+
+ *  to monitor the data, use: [test_web_page](http://www.n-blocks.net/sensor_test/)
+
+<img
+src="img/07.PNG"
+width = 300
+/>
+
+to erase all the data, add "receive.php?value=clear" at the end of the url above (careful, there is no confirmation, no questions asked. You visit the url, data is gone)
+
+
+----
+
 
 ## Links
 [Hardware Connection](https://docs.espressif.com/projects/esp-at/en/latest/Get_Started/Hardware_connection.html)

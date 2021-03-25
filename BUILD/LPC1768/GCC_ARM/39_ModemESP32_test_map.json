@@ -1,0 +1,120 @@
+[
+    {
+        "module": "[fill]",
+        "size": {
+            ".text": 604,
+            ".data": 4,
+            ".bss": 23,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "[lib]\\c.a",
+        "size": {
+            ".text": 31004,
+            ".data": 2472,
+            ".bss": 89,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "[lib]\\gcc.a",
+        "size": {
+            ".text": 4392,
+            ".data": 0,
+            ".bss": 0,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "[lib]\\misc",
+        "size": {
+            ".text": 180,
+            ".data": 4,
+            ".bss": 28,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "main.o",
+        "size": {
+            ".text": 1634,
+            ".data": 4,
+            ".bss": 1668,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "mbed-os\\drivers",
+        "size": {
+            ".text": 1776,
+            ".data": 0,
+            ".bss": 8,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "mbed-os\\hal",
+        "size": {
+            ".text": 1932,
+            ".data": 4,
+            ".bss": 67,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "mbed-os\\platform",
+        "size": {
+            ".text": 5524,
+            ".data": 260,
+            ".bss": 364,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "mbed-os\\targets",
+        "size": {
+            ".text": 3680,
+            ".data": 4,
+            ".bss": 241,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "module": "uart_at_master\\uart_at_master.o",
+        "size": {
+            ".text": 950,
+            ".data": 0,
+            ".bss": 96,
+            ".text-delta": 0,
+            ".data-delta": 0,
+            ".bss-delta": 0
+        }
+    },
+    {
+        "summary": {
+            "static_ram": 5336,
+            "static_ram_delta": 0,
+            "total_flash": 54428,
+            "total_flash_delta": 0
+        }
+    }
+]
