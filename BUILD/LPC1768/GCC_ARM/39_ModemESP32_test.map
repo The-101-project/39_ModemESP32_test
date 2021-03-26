@@ -533,7 +533,6 @@ Discarded input sections
                 0x00000000       0x70 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
  .text._ZN4mbed8AnalogIn8read_u16Ev
                 0x00000000       0x22 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
- .debug_macro   0x00000000      0xcc4 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
  .debug_macro   0x00000000       0xfa BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
  .debug_macro   0x00000000       0x28 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
  .debug_macro   0x00000000      0x17c BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
@@ -19914,7 +19913,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gc
 LOAD c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
                 0x00001000                STACK_SIZE = 0x1000
 
-.text           0x00000000     0xdc00
+.text           0x00000000     0xdc08
  *(.isr_vector)
  .isr_vector    0x00000000       0xcc BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/TOOLCHAIN_GCC_ARM/startup_LPC17xx.o
                 0x00000000                __isr_vector
@@ -21078,241 +21077,241 @@ LOAD c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gc
                                   0xa (size before relaxing)
  *fill*         0x0000c9fa        0x2 
  .rodata.main.str1.4
-                0x0000c9fc      0x1a5 BUILD/LPC1768/GCC_ARM/main.o
- *fill*         0x0000cba1        0x3 
+                0x0000c9fc      0x1a9 BUILD/LPC1768/GCC_ARM/main.o
+ *fill*         0x0000cba5        0x3 
  .rodata._ZZN4mbed8CallbackIFvvEE8generateIPS1_EEvRKT_E3ops
-                0x0000cba4        0xc BUILD/LPC1768/GCC_ARM/main.o
-                0x0000cba4                mbed::Callback<void ()>::generate<void (*)()>(void (* const&)())::ops
+                0x0000cba8        0xc BUILD/LPC1768/GCC_ARM/main.o
+                0x0000cba8                mbed::Callback<void ()>::generate<void (*)()>(void (* const&)())::ops
  .rodata._ZN4mbed8AnalogIn6unlockEv.str1.4
-                0x0000cbb0       0x47 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
- *fill*         0x0000cbf7        0x1 
+                0x0000cbb4       0x47 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
+ *fill*         0x0000cbfb        0x1 
  .rodata._ZTVN4mbed8AnalogInE
-                0x0000cbf8       0x18 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
-                0x0000cbf8                vtable for mbed::AnalogIn
+                0x0000cbfc       0x18 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
+                0x0000cbfc                vtable for mbed::AnalogIn
  .rodata._ZTVN4mbed6SerialE
-                0x0000cc10       0x9c BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Serial.o
-                0x0000cc10                vtable for mbed::Serial
+                0x0000cc14       0x9c BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Serial.o
+                0x0000cc14                vtable for mbed::Serial
  .rodata._ZN4mbed10SerialBase12_irq_handlerEm9SerialIrq.str1.4
-                0x0000ccac       0x25 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/SerialBase.o
- *fill*         0x0000ccd1        0x3 
+                0x0000ccb0       0x25 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/SerialBase.o
+ *fill*         0x0000ccd5        0x3 
  .rodata._ZTVN4mbed10SerialBaseE
-                0x0000ccd4       0x18 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/SerialBase.o
-                0x0000ccd4                vtable for mbed::SerialBase
+                0x0000ccd8       0x18 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/SerialBase.o
+                0x0000ccd8                vtable for mbed::SerialBase
  .rodata._ZN4mbed6Ticker7handlerEv.str1.4
-                0x0000ccec       0x25 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Ticker.o
+                0x0000ccf0       0x25 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Ticker.o
  .rodata._ZTVN4mbed6TickerE
-                0x0000ccec       0x14 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Ticker.o
-                0x0000ccec                vtable for mbed::Ticker
+                0x0000ccf0       0x14 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Ticker.o
+                0x0000ccf0                vtable for mbed::Ticker
  .rodata._ZTVN4mbed10TimerEventE
-                0x0000cd00       0x14 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/TimerEvent.o
-                0x0000cd00                vtable for mbed::TimerEvent
+                0x0000cd04       0x14 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/TimerEvent.o
+                0x0000cd04                vtable for mbed::TimerEvent
  .rodata.hal_critical_section_exit.str1.4
-                0x0000cd14       0x46 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_critical_section_api.o
- *fill*         0x0000cd5a        0x2 
+                0x0000cd18       0x46 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_critical_section_api.o
+ *fill*         0x0000cd5e        0x2 
  .rodata.gpio_init_out_ex.str1.4
-                0x0000cd5c       0x54 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_gpio.o
+                0x0000cd60       0x54 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_gpio.o
  .rodata.pinmap_pinout.str1.4
-                0x0000cdb0       0x11 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
- *fill*         0x0000cdc1        0x3 
+                0x0000cdb4       0x11 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+ *fill*         0x0000cdc5        0x3 
  .rodata.pinmap_merge.str1.4
-                0x0000cdc4       0x11 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
- *fill*         0x0000cdd5        0x3 
+                0x0000cdc8       0x11 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+ *fill*         0x0000cdd9        0x3 
  .rodata.pinmap_peripheral.str1.4
-                0x0000cdd8       0x20 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+                0x0000cddc       0x20 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
  .rodata.schedule_interrupt.str1.4
-                0x0000cdf8       0x44 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_ticker_api.o
+                0x0000cdfc       0x44 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_ticker_api.o
  .rodata.initialize.str1.4
-                0x0000ce3c       0x58 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_ticker_api.o
+                0x0000ce40       0x58 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_ticker_api.o
  .rodata.us_data
-                0x0000ce94        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
+                0x0000ce98        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
  .rodata.us_interface
-                0x0000ce9c       0x24 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
+                0x0000cea0       0x24 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
  .rodata._ZN4mbed8FileBaseC2EPKcNS_8PathTypeE.str1.4
-                0x0000cec0       0x47 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
+                0x0000cec4       0x47 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
  .rodata._ZN4mbed8FileBase6lookupEPKcj.str1.4
-                0x0000cec0        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
+                0x0000cec4        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
  .rodata._ZTVN4mbed8FileBaseE
-                0x0000cec8       0x10 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
-                0x0000cec8                vtable for mbed::FileBase
+                0x0000cecc       0x10 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
+                0x0000cecc                vtable for mbed::FileBase
  .rodata._ZTVN4mbed10FileHandleE
-                0x0000ced8       0x5c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileHandle.o
-                0x0000ced8                vtable for mbed::FileHandle
+                0x0000cedc       0x5c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileHandle.o
+                0x0000cedc                vtable for mbed::FileHandle
  .rodata._ZN4mbed8FilePathC2EPKc.str1.4
-                0x0000cf34       0x35 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FilePath.o
- *fill*         0x0000cf69        0x3 
+                0x0000cf38       0x35 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FilePath.o
+ *fill*         0x0000cf6d        0x3 
  .rodata._ZN4mbed6StreamC2EPKc.str1.4
-                0x0000cf6c       0x17 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
- *fill*         0x0000cf83        0x1 
+                0x0000cf70       0x17 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
+ *fill*         0x0000cf87        0x1 
  .rodata._ZTVN4mbed8FileLikeE
-                0x0000cf84       0x6c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
-                0x0000cf84                vtable for mbed::FileLike
+                0x0000cf88       0x6c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
+                0x0000cf88                vtable for mbed::FileLike
  .rodata._ZTVN4mbed6StreamE
-                0x0000cff0       0x7c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
-                0x0000cff0                vtable for mbed::Stream
+                0x0000cff4       0x7c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
+                0x0000cff4                vtable for mbed::Stream
  .rodata.print_context_info.str1.4
-                0x0000d06c      0x13c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+                0x0000d070      0x13c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
  .rodata.mbed_fault_handler.str1.4
-                0x0000d1a8       0x9c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+                0x0000d1ac       0x9c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
  .rodata.mbed_fault_context
-                0x0000d244        0x4 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
-                0x0000d244                mbed_fault_context
+                0x0000d248        0x4 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+                0x0000d248                mbed_fault_context
  .rodata.mbed_die.str1.4
-                0x0000d248       0x54 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_board.o
+                0x0000d24c       0x54 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_board.o
  .rodata.mbed_error_vprintf.str1.4
-                0x0000d248        0x5 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_board.o
- *fill*         0x0000d24d        0x3 
+                0x0000d24c        0x5 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_board.o
+ *fill*         0x0000d251        0x3 
  .rodata.core_util_critical_section_enter.str1.4
-                0x0000d250       0x5d BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_critical.o
- *fill*         0x0000d2ad        0x3 
+                0x0000d254       0x5d BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_critical.o
+ *fill*         0x0000d2b1        0x3 
  .rodata.print_error_report.str1.4
-                0x0000d2b0      0x19e BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
- *fill*         0x0000d44e        0x2 
+                0x0000d2b4      0x19e BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
+ *fill*         0x0000d452        0x2 
  .rodata.sleep_manager_lock_deep_sleep_internal.str1.4
-                0x0000d450       0x22 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_power_mgmt.o
- *fill*         0x0000d472        0x2 
+                0x0000d454       0x22 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_power_mgmt.o
+ *fill*         0x0000d476        0x2 
  .rodata.sleep_manager_unlock_deep_sleep_internal.str1.4
-                0x0000d474       0x1e BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_power_mgmt.o
+                0x0000d478       0x1e BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_power_mgmt.o
  .rodata._ZL18reserve_filehandlev.str1.4
-                0x0000d492       0x47 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
- *fill*         0x0000d492        0x2 
+                0x0000d496       0x47 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+ *fill*         0x0000d496        0x2 
  .rodata.__cxa_guard_acquire.str1.4
-                0x0000d494       0x4a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
- *fill*         0x0000d4de        0x2 
+                0x0000d498       0x4a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+ *fill*         0x0000d4e2        0x2 
  .rodata.__cxa_guard_release.str1.4
-                0x0000d4e0       0x37 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
- *fill*         0x0000d517        0x1 
+                0x0000d4e4       0x37 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+ *fill*         0x0000d51b        0x1 
  .rodata._write.str1.4
-                0x0000d518        0x2 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
- *fill*         0x0000d51a        0x2 
+                0x0000d51c        0x2 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+ *fill*         0x0000d51e        0x2 
  .rodata._ZTV12DirectSerial
-                0x0000d51c       0x5c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
-                0x0000d51c                vtable for DirectSerial
+                0x0000d520       0x5c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+                0x0000d520                vtable for DirectSerial
  .rodata._ZZL15default_consolevE14console_pinmap
-                0x0000d578       0x18 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+                0x0000d57c       0x18 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
  .rodata.__stderr_name
-                0x0000d590        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
-                0x0000d590                __stderr_name
+                0x0000d594        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+                0x0000d594                __stderr_name
  .rodata.__stdin_name
-                0x0000d598        0x7 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
-                0x0000d598                __stdin_name
- *fill*         0x0000d59f        0x1 
+                0x0000d59c        0x7 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+                0x0000d59c                __stdin_name
+ *fill*         0x0000d5a3        0x1 
  .rodata.__stdout_name
-                0x0000d5a0        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
-                0x0000d5a0                __stdout_name
+                0x0000d5a4        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+                0x0000d5a4                __stdout_name
  .rodata.analogin_init.str1.4
-                0x0000d5a8       0x54 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/analogin_api.o
+                0x0000d5ac       0x54 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/analogin_api.o
  .rodata.PinMap_ADC
-                0x0000d5fc       0x6c BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/analogin_api.o
+                0x0000d600       0x6c BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/analogin_api.o
  .rodata.gpio_set.str1.4
-                0x0000d668       0x4b BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/gpio_api.o
+                0x0000d66c       0x4b BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/gpio_api.o
  .rodata.gpio_dir.str1.4
-                0x0000d6b3       0x18 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/gpio_api.o
- *fill*         0x0000d6b3        0x1 
+                0x0000d6b7       0x18 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/gpio_api.o
+ *fill*         0x0000d6b7        0x1 
  .rodata.pin_function.str1.4
-                0x0000d6b4       0x35 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/pinmap.o
+                0x0000d6b8       0x35 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/pinmap.o
                                  0x4b (size before relaxing)
- *fill*         0x0000d6e9        0x3 
+ *fill*         0x0000d6ed        0x3 
  .rodata.serial_baud.str1.4
-                0x0000d6ec       0x55 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
- *fill*         0x0000d741        0x3 
+                0x0000d6f0       0x55 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+ *fill*         0x0000d745        0x3 
  .rodata.serial_format.str1.4
-                0x0000d744       0xd0 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+                0x0000d748       0xd0 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
  .rodata.serial_writable.str1.4
-                0x0000d814       0x54 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+                0x0000d818       0x54 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
  .rodata.serial_init.str1.4
-                0x0000d814       0x10 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+                0x0000d818       0x10 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
  .rodata.PinMap_UART_CTS
-                0x0000d824       0x24 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+                0x0000d828       0x24 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
  .rodata.PinMap_UART_RTS
-                0x0000d848       0x24 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+                0x0000d84c       0x24 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
  .rodata.PinMap_UART_RX
-                0x0000d86c       0x6c BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+                0x0000d870       0x6c BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
  .rodata.PinMap_UART_TX
-                0x0000d8d8       0x6c BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+                0x0000d8dc       0x6c BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
  .rodata.info.5904
-                0x0000d944        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/us_ticker.o
+                0x0000d948        0x8 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/us_ticker.o
  .rodata._ZN8ATMaster7_rx_irqEv.str1.4
-                0x0000d94c       0x54 BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
+                0x0000d950       0x54 BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
  .rodata._ZZN4mbed8CallbackIFvvEE8generateINS2_14method_contextI8ATMasterMS5_FvvEEEEEvRKT_E3ops
-                0x0000d94c        0xc BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
-                0x0000d94c                mbed::Callback<void ()>::generate<mbed::Callback<void ()>::method_context<ATMaster, void (ATMaster::*)()> >(mbed::Callback<void ()>::method_context<ATMaster, void (ATMaster::*)()> const&)::ops
+                0x0000d950        0xc BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
+                0x0000d950                mbed::Callback<void ()>::generate<mbed::Callback<void ()>::method_context<ATMaster, void (ATMaster::*)()> >(mbed::Callback<void ()>::method_context<ATMaster, void (ATMaster::*)()> const&)::ops
  .rodata._global_impure_ptr
-                0x0000d958        0x4 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-impure.o)
-                0x0000d958                _global_impure_ptr
+                0x0000d95c        0x4 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-impure.o)
+                0x0000d95c                _global_impure_ptr
  .rodata._svfprintf_r.str1.4
-                0x0000d95c       0x3f c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-svfprintf.o)
+                0x0000d960       0x3f c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-svfprintf.o)
                                  0x42 (size before relaxing)
- *fill*         0x0000d99b        0x1 
+ *fill*         0x0000d99f        0x1 
  .rodata.blanks.7345
-                0x0000d99c       0x10 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-svfprintf.o)
+                0x0000d9a0       0x10 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-svfprintf.o)
  .rodata.zeroes.7346
-                0x0000d9ac       0x10 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-svfprintf.o)
+                0x0000d9b0       0x10 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-svfprintf.o)
  .rodata._vfprintf_r.str1.4
-                0x0000d9bc       0x42 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-vfprintf.o)
+                0x0000d9c0       0x42 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-vfprintf.o)
  .rodata.blanks.7360
-                0x0000d9bc       0x10 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-vfprintf.o)
+                0x0000d9c0       0x10 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-vfprintf.o)
  .rodata.zeroes.7361
-                0x0000d9cc       0x10 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-vfprintf.o)
+                0x0000d9d0       0x10 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-vfprintf.o)
  .rodata._ctype_
-                0x0000d9dc      0x101 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-ctype_.o)
-                0x0000d9dc                _ctype_
- *fill*         0x0000dadd        0x3 
+                0x0000d9e0      0x101 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-ctype_.o)
+                0x0000d9e0                _ctype_
+ *fill*         0x0000dae1        0x3 
  .rodata._dtoa_r.str1.4
-                0x0000dae0        0xd c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-dtoa.o)
+                0x0000dae4        0xd c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-dtoa.o)
                                  0x12 (size before relaxing)
- *fill*         0x0000daed        0x3 
+ *fill*         0x0000daf1        0x3 
  .rodata._setlocale_r.str1.4
-                0x0000daf0        0xa c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-locale.o)
+                0x0000daf4        0xa c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-locale.o)
                                   0xd (size before relaxing)
- *fill*         0x0000dafa        0x2 
- .rodata.str1.4
-                0x0000dafc        0x2 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-locale.o)
  *fill*         0x0000dafe        0x2 
+ .rodata.str1.4
+                0x0000db00        0x2 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-locale.o)
+ *fill*         0x0000db02        0x6 
  .rodata.__mprec_bigtens
-                0x0000db00       0x28 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-mprec.o)
-                0x0000db00                __mprec_bigtens
+                0x0000db08       0x28 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-mprec.o)
+                0x0000db08                __mprec_bigtens
  .rodata.__mprec_tens
-                0x0000db28       0xc8 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-mprec.o)
-                0x0000db28                __mprec_tens
+                0x0000db30       0xc8 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-mprec.o)
+                0x0000db30                __mprec_tens
  .rodata.p05.6115
-                0x0000dbf0        0xc c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-mprec.o)
+                0x0000dbf8        0xc c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-mprec.o)
  *(.eh_frame*)
- .eh_frame      0x0000dbfc        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
- .eh_frame      0x0000dbfc        0x4 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtend.o
+ .eh_frame      0x0000dc04        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x0000dc04        0x4 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtend.o
 
-.glue_7         0x0000dc00        0x0
- .glue_7        0x0000dc00        0x0 linker stubs
+.glue_7         0x0000dc08        0x0
+ .glue_7        0x0000dc08        0x0 linker stubs
 
-.glue_7t        0x0000dc00        0x0
- .glue_7t       0x0000dc00        0x0 linker stubs
+.glue_7t        0x0000dc08        0x0
+ .glue_7t       0x0000dc08        0x0 linker stubs
 
-.vfp11_veneer   0x0000dc00        0x0
- .vfp11_veneer  0x0000dc00        0x0 linker stubs
+.vfp11_veneer   0x0000dc08        0x0
+ .vfp11_veneer  0x0000dc08        0x0 linker stubs
 
-.v4_bx          0x0000dc00        0x0
- .v4_bx         0x0000dc00        0x0 linker stubs
+.v4_bx          0x0000dc08        0x0
+ .v4_bx         0x0000dc08        0x0 linker stubs
 
-.iplt           0x0000dc00        0x0
- .iplt          0x0000dc00        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x0000dc08        0x0
+ .iplt          0x0000dc08        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000dc00                __exidx_start = .
+                0x0000dc08                __exidx_start = .
 
-.ARM.exidx      0x0000dc00        0x8
+.ARM.exidx      0x0000dc08        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x0000dc00        0x8 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
- .ARM.exidx     0x0000dc08        0x0 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/TOOLCHAIN_GCC/except.o
+ .ARM.exidx     0x0000dc08        0x8 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .ARM.exidx     0x0000dc10        0x0 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/TOOLCHAIN_GCC/except.o
                                  0x28 (size before relaxing)
- .ARM.exidx     0x0000dc08        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x0000dc10        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x0000dc08                __exidx_end = .
-                0x0000dc08                __etext = .
+                0x0000dc10                __exidx_end = .
+                0x0000dc10                __etext = .
 
-.rel.dyn        0x0000dc08        0x0
- .rel.iplt      0x0000dc08        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x0000dc10        0x0
+ .rel.iplt      0x0000dc10        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.data           0x100000c8      0xad8 load address 0x0000dc08
+.data           0x100000c8      0xad8 load address 0x0000dc10
                 0x100000c8                __data_start__ = .
                 0x100000c8                Image$$RW_IRAM1$$Base = .
  *(vtable)
@@ -21372,10 +21371,10 @@ LOAD c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gc
  *fill*         0x10000b9c        0x4 
                 0x10000ba0                __data_end__ = .
 
-.igot.plt       0x10000ba0        0x0 load address 0x0000e6e0
+.igot.plt       0x10000ba0        0x0 load address 0x0000e6e8
  .igot.plt      0x10000ba0        0x0 c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.bss            0x10000ba0      0xa18 load address 0x0000e6e0
+.bss            0x10000ba0      0xa18 load address 0x0000e6e8
                 0x10000ba0                __bss_start__ = .
  *(.bss*)
  .bss           0x10000ba0       0x1c c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
@@ -21499,7 +21498,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gc
                 0x100015b8                __bss_end__ = .
                 0x100015b8                Image$$RW_IRAM1$$ZI$$Limit = .
 
-.heap           0x100015b8     0x5a28 load address 0x0000f0f8
+.heap           0x100015b8     0x5a28 load address 0x0000f100
                 0x100015b8                __end__ = .
                 0x100015b8                end = __end__
  *(.heap*)
@@ -22040,7 +22039,7 @@ OUTPUT(BUILD/LPC1768/GCC_ARM/39_ModemESP32_test.elf elf32-littlearm)
  .debug_ranges  0x00001db8       0x48 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/us_ticker.o
  .debug_ranges  0x00001e00      0x200 BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
 
-.debug_macro    0x00000000    0x10f50
+.debug_macro    0x00000000    0x11c14
  .debug_macro   0x00000000      0xcd9 BUILD/LPC1768/GCC_ARM/main.o
  .debug_macro   0x00000cd9      0xcc4 BUILD/LPC1768/GCC_ARM/main.o
  .debug_macro   0x0000199d       0xfa BUILD/LPC1768/GCC_ARM/main.o
@@ -22167,58 +22166,59 @@ OUTPUT(BUILD/LPC1768/GCC_ARM/39_ModemESP32_test.elf elf32-littlearm)
  .debug_macro   0x000067e1       0x10 BUILD/LPC1768/GCC_ARM/main.o
  .debug_macro   0x000067f1       0x10 BUILD/LPC1768/GCC_ARM/main.o
  .debug_macro   0x00006801      0x78f BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
- .debug_macro   0x00006f90       0x2c BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
- .debug_macro   0x00006fbc      0x81a BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Serial.o
- .debug_macro   0x000077d6      0x7ca BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/SerialBase.o
- .debug_macro   0x00007fa0      0x35f BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Ticker.o
- .debug_macro   0x000082ff      0x17d BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/TimerEvent.o
- .debug_macro   0x0000847c      0x50a BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/UARTSerial.o
- .debug_macro   0x00008986      0x112 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_critical_section_api.o
- .debug_macro   0x00008a98      0x15b BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_gpio.o
- .debug_macro   0x00008bf3      0x2dc BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
- .debug_macro   0x00008ecf       0x11 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
- .debug_macro   0x00008ee0       0x97 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
- .debug_macro   0x00008f77       0xfd BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
- .debug_macro   0x00009074      0x16f BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
- .debug_macro   0x000091e3      0x327 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_ticker_api.o
- .debug_macro   0x0000950a      0x185 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
- .debug_macro   0x0000968f      0x229 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
- .debug_macro   0x000098b8      0x3de BUILD/LPC1768/GCC_ARM/mbed-os/hal/static_pinmap.o
- .debug_macro   0x00009c96       0x64 BUILD/LPC1768/GCC_ARM/mbed-os/hal/static_pinmap.o
- .debug_macro   0x00009cfa      0x7b1 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
- .debug_macro   0x0000a4ab      0x483 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileHandle.o
- .debug_macro   0x0000a92e      0x7d3 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FilePath.o
- .debug_macro   0x0000b101      0x7da BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
- .debug_macro   0x0000b8db      0x397 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
- .debug_macro   0x0000bc72       0x3a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
- .debug_macro   0x0000bcac       0x82 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
- .debug_macro   0x0000bd2e      0x4cc BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
- .debug_macro   0x0000c1fa      0x104 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
- .debug_macro   0x0000c2fe       0x22 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
- .debug_macro   0x0000c320      0x74f BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_alloc_wrappers.o
- .debug_macro   0x0000ca6f      0x27c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_assert.o
- .debug_macro   0x0000cceb      0x37f BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_board.o
- .debug_macro   0x0000d06a      0x122 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_critical.o
- .debug_macro   0x0000d18c      0x413 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
- .debug_macro   0x0000d59f       0x3a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
- .debug_macro   0x0000d5d9       0x10 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
- .debug_macro   0x0000d5e9       0x10 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
- .debug_macro   0x0000d5f9      0x2ae BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_interface.o
- .debug_macro   0x0000d8a7      0x39a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_power_mgmt.o
- .debug_macro   0x0000dc41      0xc0c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
- .debug_macro   0x0000e84d      0x854 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
- .debug_macro   0x0000f0a1      0x21d BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_sdk_boot.o
- .debug_macro   0x0000f2be      0x27a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_semihost_api.o
- .debug_macro   0x0000f538       0x16 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_semihost_api.o
- .debug_macro   0x0000f54e      0x1a2 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_wait_api_no_rtos.o
- .debug_macro   0x0000f6f0      0x177 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/analogin_api.o
- .debug_macro   0x0000f867       0x56 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/CRP.o
- .debug_macro   0x0000f8bd      0x17b BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/system_LPC17xx.o
- .debug_macro   0x0000fa38      0x15f BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/gpio_api.o
- .debug_macro   0x0000fb97      0x2eb BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/pinmap.o
- .debug_macro   0x0000fe82      0x299 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
- .debug_macro   0x0001011b      0x174 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/us_ticker.o
- .debug_macro   0x0001028f      0xcc1 BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
+ .debug_macro   0x00006f90      0xcc4 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
+ .debug_macro   0x00007c54       0x2c BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
+ .debug_macro   0x00007c80      0x81a BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Serial.o
+ .debug_macro   0x0000849a      0x7ca BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/SerialBase.o
+ .debug_macro   0x00008c64      0x35f BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Ticker.o
+ .debug_macro   0x00008fc3      0x17d BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/TimerEvent.o
+ .debug_macro   0x00009140      0x50a BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/UARTSerial.o
+ .debug_macro   0x0000964a      0x112 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_critical_section_api.o
+ .debug_macro   0x0000975c      0x15b BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_gpio.o
+ .debug_macro   0x000098b7      0x2dc BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+ .debug_macro   0x00009b93       0x11 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+ .debug_macro   0x00009ba4       0x97 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+ .debug_macro   0x00009c3b       0xfd BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+ .debug_macro   0x00009d38      0x16f BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+ .debug_macro   0x00009ea7      0x327 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_ticker_api.o
+ .debug_macro   0x0000a1ce      0x185 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
+ .debug_macro   0x0000a353      0x229 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
+ .debug_macro   0x0000a57c      0x3de BUILD/LPC1768/GCC_ARM/mbed-os/hal/static_pinmap.o
+ .debug_macro   0x0000a95a       0x64 BUILD/LPC1768/GCC_ARM/mbed-os/hal/static_pinmap.o
+ .debug_macro   0x0000a9be      0x7b1 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
+ .debug_macro   0x0000b16f      0x483 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileHandle.o
+ .debug_macro   0x0000b5f2      0x7d3 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FilePath.o
+ .debug_macro   0x0000bdc5      0x7da BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
+ .debug_macro   0x0000c59f      0x397 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+ .debug_macro   0x0000c936       0x3a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+ .debug_macro   0x0000c970       0x82 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+ .debug_macro   0x0000c9f2      0x4cc BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+ .debug_macro   0x0000cebe      0x104 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+ .debug_macro   0x0000cfc2       0x22 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+ .debug_macro   0x0000cfe4      0x74f BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_alloc_wrappers.o
+ .debug_macro   0x0000d733      0x27c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_assert.o
+ .debug_macro   0x0000d9af      0x37f BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_board.o
+ .debug_macro   0x0000dd2e      0x122 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_critical.o
+ .debug_macro   0x0000de50      0x413 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
+ .debug_macro   0x0000e263       0x3a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
+ .debug_macro   0x0000e29d       0x10 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
+ .debug_macro   0x0000e2ad       0x10 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
+ .debug_macro   0x0000e2bd      0x2ae BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_interface.o
+ .debug_macro   0x0000e56b      0x39a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_power_mgmt.o
+ .debug_macro   0x0000e905      0xc0c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+ .debug_macro   0x0000f511      0x854 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+ .debug_macro   0x0000fd65      0x21d BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_sdk_boot.o
+ .debug_macro   0x0000ff82      0x27a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_semihost_api.o
+ .debug_macro   0x000101fc       0x16 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_semihost_api.o
+ .debug_macro   0x00010212      0x1a2 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_wait_api_no_rtos.o
+ .debug_macro   0x000103b4      0x177 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/analogin_api.o
+ .debug_macro   0x0001052b       0x56 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/CRP.o
+ .debug_macro   0x00010581      0x17b BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/system_LPC17xx.o
+ .debug_macro   0x000106fc      0x15f BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/gpio_api.o
+ .debug_macro   0x0001085b      0x2eb BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/pinmap.o
+ .debug_macro   0x00010b46      0x299 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+ .debug_macro   0x00010ddf      0x174 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/us_ticker.o
+ .debug_macro   0x00010f53      0xcc1 BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
 
 .debug_line     0x00000000    0x1d260
  .debug_line    0x00000000     0x1ab6 BUILD/LPC1768/GCC_ARM/main.o
@@ -22261,84 +22261,84 @@ OUTPUT(BUILD/LPC1768/GCC_ARM/39_ModemESP32_test.elf elf32-littlearm)
  .debug_line    0x0001b0de      0x64b BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/us_ticker.o
  .debug_line    0x0001b729     0x1b37 BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
 
-.debug_str      0x00000000    0x2cfb4
- .debug_str     0x00000000    0x20913 BUILD/LPC1768/GCC_ARM/main.o
-                              0x21727 (size before relaxing)
- .debug_str     0x00020913       0xd3 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
+.debug_str      0x00000000    0x2cfdf
+ .debug_str     0x00000000    0x20916 BUILD/LPC1768/GCC_ARM/main.o
+                              0x2172a (size before relaxing)
+ .debug_str     0x00020916       0xfb BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/AnalogIn.o
                               0x1bb6a (size before relaxing)
- .debug_str     0x000209e6      0x3d5 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Serial.o
+ .debug_str     0x00020a11      0x3d5 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Serial.o
                               0x1c455 (size before relaxing)
- .debug_str     0x00020dbb      0x90c BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/SerialBase.o
+ .debug_str     0x00020de6      0x90c BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/SerialBase.o
                               0x1c7d5 (size before relaxing)
- .debug_str     0x000216c7      0x338 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Ticker.o
+ .debug_str     0x000216f2      0x338 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/Ticker.o
                               0x1272a (size before relaxing)
- .debug_str     0x000219ff      0x2ed BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/TimerEvent.o
+ .debug_str     0x00021a2a      0x2ed BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/TimerEvent.o
                                0xd30a (size before relaxing)
- .debug_str     0x00021cec     0x1163 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/UARTSerial.o
+ .debug_str     0x00021d17     0x1163 BUILD/LPC1768/GCC_ARM/mbed-os/drivers/source/UARTSerial.o
                               0x1686e (size before relaxing)
- .debug_str     0x00022e4f      0x3c3 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_critical_section_api.o
+ .debug_str     0x00022e7a      0x3c3 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_critical_section_api.o
                                0xc3fb (size before relaxing)
- .debug_str     0x00023212      0x132 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_gpio.o
+ .debug_str     0x0002323d      0x132 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_gpio.o
                                0xcb4b (size before relaxing)
- .debug_str     0x00023344     0x2e0c BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
+ .debug_str     0x0002336f     0x2e0c BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_pinmap_common.o
                               0x15037 (size before relaxing)
- .debug_str     0x00026150      0x148 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_ticker_api.o
+ .debug_str     0x0002617b      0x148 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_ticker_api.o
                               0x15262 (size before relaxing)
- .debug_str     0x00026298       0xd6 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
+ .debug_str     0x000262c3       0xd6 BUILD/LPC1768/GCC_ARM/mbed-os/hal/mbed_us_ticker_api.o
                                0xff4e (size before relaxing)
- .debug_str     0x0002636e      0x34b BUILD/LPC1768/GCC_ARM/mbed-os/hal/static_pinmap.o
+ .debug_str     0x00026399      0x34b BUILD/LPC1768/GCC_ARM/mbed-os/hal/static_pinmap.o
                               0x150a2 (size before relaxing)
- .debug_str     0x000266b9      0x41a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
+ .debug_str     0x000266e4      0x41a BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileBase.o
                               0x1ba36 (size before relaxing)
- .debug_str     0x00026ad3      0x1a4 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileHandle.o
+ .debug_str     0x00026afe      0x1a4 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FileHandle.o
                               0x1498d (size before relaxing)
- .debug_str     0x00026c77      0x5db BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FilePath.o
+ .debug_str     0x00026ca2      0x5db BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/FilePath.o
                               0x1b973 (size before relaxing)
- .debug_str     0x00027252      0x48c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
+ .debug_str     0x0002727d      0x48c BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/Stream.o
                               0x1f398 (size before relaxing)
- .debug_str     0x000276de       0x17 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/TOOLCHAIN_GCC/except.o
+ .debug_str     0x00027709       0x17 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/TOOLCHAIN_GCC/except.o
                                  0x42 (size before relaxing)
- .debug_str     0x000276f5     0x14e8 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
+ .debug_str     0x00027720     0x14e8 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/TARGET_CORTEX_M/mbed_fault_handler.o
                               0x19942 (size before relaxing)
- .debug_str     0x00028bdd      0x1dc BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_alloc_wrappers.o
+ .debug_str     0x00028c08      0x1dc BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_alloc_wrappers.o
                               0x1a461 (size before relaxing)
- .debug_str     0x00028db9       0x28 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_assert.o
+ .debug_str     0x00028de4       0x28 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_assert.o
                                0xd678 (size before relaxing)
- .debug_str     0x00028de1       0x7d BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_board.o
+ .debug_str     0x00028e0c       0x7d BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_board.o
                               0x1537e (size before relaxing)
- .debug_str     0x00028e5e       0x92 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_critical.o
+ .debug_str     0x00028e89       0x92 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_critical.o
                                0xc487 (size before relaxing)
- .debug_str     0x00028ef0      0x4d7 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
+ .debug_str     0x00028f1b      0x4d7 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_error.o
                               0x19ffa (size before relaxing)
- .debug_str     0x000293c7      0x165 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_interface.o
+ .debug_str     0x000293f2      0x165 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_interface.o
                               0x10a63 (size before relaxing)
- .debug_str     0x0002952c      0x147 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_power_mgmt.o
+ .debug_str     0x00029557      0x147 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_power_mgmt.o
                               0x18754 (size before relaxing)
- .debug_str     0x00029673     0x1eda BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
+ .debug_str     0x0002969e     0x1eda BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_retarget.o
                               0x244ce (size before relaxing)
- .debug_str     0x0002b54d       0xa0 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_sdk_boot.o
+ .debug_str     0x0002b578       0xa0 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_sdk_boot.o
                                0xf66b (size before relaxing)
- .debug_str     0x0002b5ed      0x327 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_semihost_api.o
+ .debug_str     0x0002b618      0x327 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_semihost_api.o
                                0xf81f (size before relaxing)
- .debug_str     0x0002b914       0xa4 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_wait_api_no_rtos.o
+ .debug_str     0x0002b93f       0xa4 BUILD/LPC1768/GCC_ARM/mbed-os/platform/source/mbed_wait_api_no_rtos.o
                                0xff3d (size before relaxing)
- .debug_str     0x0002b9b8      0x25a BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/analogin_api.o
+ .debug_str     0x0002b9e3      0x25a BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/analogin_api.o
                                0xcd48 (size before relaxing)
- .debug_str     0x0002bc12       0xa8 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/CRP.o
+ .debug_str     0x0002bc3d       0xa8 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/CRP.o
                                0x4125 (size before relaxing)
- .debug_str     0x0002bcba       0x57 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/TOOLCHAIN_GCC_ARM/startup_LPC17xx.o
+ .debug_str     0x0002bce5       0x57 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/TOOLCHAIN_GCC_ARM/startup_LPC17xx.o
                                  0x90 (size before relaxing)
- .debug_str     0x0002bd11      0x30c BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/system_LPC17xx.o
+ .debug_str     0x0002bd3c      0x30c BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/system_LPC17xx.o
                                0xbe22 (size before relaxing)
- .debug_str     0x0002c01d      0x174 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/gpio_api.o
+ .debug_str     0x0002c048      0x174 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/gpio_api.o
                                0xcc33 (size before relaxing)
- .debug_str     0x0002c191       0x74 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/pinmap.o
+ .debug_str     0x0002c1bc       0x74 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/pinmap.o
                               0x12561 (size before relaxing)
- .debug_str     0x0002c205      0x5a4 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
+ .debug_str     0x0002c230      0x5a4 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/serial_api.o
                               0x110ba (size before relaxing)
- .debug_str     0x0002c7a9      0x131 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/us_ticker.o
+ .debug_str     0x0002c7d4      0x131 BUILD/LPC1768/GCC_ARM/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/us_ticker.o
                                0xceb1 (size before relaxing)
- .debug_str     0x0002c8da      0x6da BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
+ .debug_str     0x0002c905      0x6da BUILD/LPC1768/GCC_ARM/uart_at_master/uart_at_master.o
                               0x213d4 (size before relaxing)
 
 .debug_frame    0x00000000     0x4af4

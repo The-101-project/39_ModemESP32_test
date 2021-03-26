@@ -1,5 +1,8 @@
-#define WIFI_SSID     "VM6B342D1"
-#define WIFI_PASSWORD "4nsZcvenfktw"
+//#define WIFI_SSID     "VM6B342D1"
+//#define WIFI_PASSWORD "4nsZcvenfktw"
+
+#define WIFI_SSID     "eir18941350-2.4G"
+#define WIFI_PASSWORD "2jgwpryd"
 
 // Do not use too short a period, for better data visualization later
 // Too much data will result in a giant unusable data table
