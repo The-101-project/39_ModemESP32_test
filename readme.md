@@ -7,7 +7,7 @@ Testing ESP32 WROOM32D WIFI modem and AT-Comands with [n-PRO-20](http://www.n-bl
 
 <img
 src="img/02.PNG"
-width = 50000
+width = 800
 />
 
 ----
@@ -32,7 +32,7 @@ After more than 90 minutes, still did not flash it :x:
  *  ...
  *  ...
 
-### Tested AT commands
+## Manually Tested AT commands with a Terminal
 ```
 AT+GMR
 AT+CWMODE=1
@@ -61,7 +61,7 @@ Using the preprogrammed factory flash image:
 
 <img
 src="img/07.PNG"
-width = 300
+width = 400
 />
 
 to erase all the data, add "receive.php?value=clear" at the end of the url above (careful, there is no confirmation, no questions asked. You visit the url, data is gone)
