@@ -41,10 +41,9 @@ AT+CWLAP
 AT+CWJAP="ssid","password"
 
 AT+CIPSTART="TCP","n-blocks.net",80
-AT+CIPSEND=76
-
-GET /sensor_test/receive.php?value=1234 HTTP/1.1
-Host: www.n-blocks.net
+AT+CIPSEND=57 <-- number 57 has to be corrected for the actual payload length
+GET /hello.html HTTP/1.1
+Host: http://www.n-blocks.net
 
 
 AT+CIPCLOSE
