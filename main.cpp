@@ -1,8 +1,5 @@
-//#define WIFI_SSID     "VM6B342D1"
-//#define WIFI_PASSWORD "4nsZcvenfktw"
-
-#define WIFI_SSID     "eir18941350-2.4G"
-#define WIFI_PASSWORD "2jgwpryd"
+#define WIFI_SSID     "VM6B342D1"
+#define WIFI_PASSWORD "4nsZcvenfktw"
 
 // Do not use too short a period, for better data visualization later
 // Too much data will result in a giant unusable data table
@@ -59,6 +56,14 @@ enum  AppStates {
     APPSTATE_CLOSING
 };
 uint32_t app_state = APPSTATE_RESET; // main state machine
+
+enum HTTPStates {
+    HTTPSTATE_NONE,
+    HTTPSTATE_CODE,
+    HTTPSTATE_HEADER,
+    HTTPSTATE_CONTENT
+};
+uint32_t http_state = HTTPSTATE_NONE;
 
 uint32_t ticker_timeout = 1;
 void ticker_isr() {
@@ -192,6 +197,7 @@ int main(void) {
                         _esp_status = ESP_IDLE;
                         app_state++;
                         pc.printf("SEND OK\n");
+                        wait(0.1);
                     }
                     else {
                         // Not the answer we are looking for
@@ -202,6 +208,7 @@ int main(void) {
             case APPSTATE_SENDING_DATA:
                 if (_esp_status == ESP_IDLE) {
                     at.set_custom_prefix("SEND OK");
+                    pc.printf("SENDING DATA...\n");
                     at._uart.printf(url_buf);
                     _esp_status = ESP_WAITING;
                 }
@@ -259,7 +266,13 @@ int main(void) {
             char buf[1024];
             _esp_last_response = at.process(buf);
             _esp_status = ESP_RECEIVED;
-            pc.printf("Resp: %d - \"%s\"\n", _esp_last_response, buf);
+            uint32_t buf_len = strlen(buf);
+            if (buf_len < 5) {
+                pc.printf("Resp: %d - \"%s\" ( ", _esp_last_response, buf);
+                for (uint32_t i=0; i<buf_len; i++) pc.printf("0x%02X ", buf[i]);
+                pc.printf(")\n");
+            }
+            else pc.printf("Resp: %d - \"%s\"\n", _esp_last_response, buf);
         }
         else {
             
