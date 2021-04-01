@@ -6,7 +6,7 @@ DigitalOut led3(LED3);
 DigitalOut led4(LED4);
 
 
-Serial debugpc(USBTX, USBRX);
+//Serial debugpc(USBTX, USBRX);
 
 ATMaster::ATMaster(PinName txPin, PinName rxPin, char * ok_prefix, char * error_prefix): 
     _uart(txPin, rxPin) {
@@ -62,16 +62,15 @@ void ATMaster::_rx_irq() {
                 // Both will be discarded and current buffer is marked as a line
                 // a NULL character is added instead to mark end of string
 
-                // but if we don't have any actual data, just keep buffer empty
-                
-                if (_buf_message_len) {
-                    //for (uint32_t ii=0; ii<_buf_len; ii++) debugpc.putc(_buf[ii])
+                // If we have data, add a null termination
+                //if (_buf_message_len) {
                     _buf_add(0);
-                    
-                    _has_data++;
-                    _buf_message_len = 0;
-                    led2 = !led2;
-                }
+                //}
+                // but if we don't have any actual data, just keep buffer empty
+
+                _has_data++;
+                _buf_message_len = 0;
+                led2 = !led2;
             }
             else {
                 _buf_add(recv);
@@ -88,15 +87,15 @@ void ATMaster::_rx_irq() {
                 // Current '\n' char is discarded and current buffer is marked as a line
                 // a NULL character is added instead to mark end of string
 
-                // but if we don't have any actual data, just keep buffer empty
-                
-                if (_buf_message_len) {
+                // If we have data, add a null termination
+                //if (_buf_message_len) {
                     _buf_add(0);
-                    
-                    _has_data++;
-                    _buf_message_len = 0;
-                    led2 = !led2;
-                }
+                //}
+                // but if we don't have any actual data, just keep buffer empty
+
+                _has_data++;
+                _buf_message_len = 0;
+                led2 = !led2;
             }
             else {
                 _buf_add(recv);
@@ -146,13 +145,13 @@ _AT_RESPONSE_TYPE ATMaster::process(char * destination_string) {
     
     else result = AT_RESPONSE_OTHER;
     
+    uint32_t i = 0;
     if (_buf_len) {
         // Dispose current message from the buffer
         // When this method is called it is necessarily null-terminated
         // The _buf_take() call in the end of the 'while' block will also
         // make sure the null is removed leaving the buf clean
         char c = _buf_take();
-        uint32_t i = 0;
         while (c) {
             // If a destination string buffer was provided, fill it with
             // current payload line
@@ -163,7 +162,11 @@ _AT_RESPONSE_TYPE ATMaster::process(char * destination_string) {
             c = _buf_take();
         }
         // If we are filling an external buffer, we have to null-terminate it
-        if (destination_string) destination_string[i++] = 0;
+        if (destination_string) destination_string[i] = 0;
+    }
+    if (i == 0) {
+        // There was no content, this is a blank line
+        result = AT_RESPONSE_BLANKLINE;
     }
     
     return result;

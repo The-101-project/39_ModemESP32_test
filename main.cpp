@@ -64,11 +64,24 @@ enum HTTPStates {
     HTTPSTATE_CONTENT
 };
 uint32_t http_state = HTTPSTATE_NONE;
+uint32_t http_expected_length = 0;
 
 uint32_t ticker_timeout = 1;
 void ticker_isr() {
     ticker_timeout++;
 }
+
+
+uint32_t str_starts_with(char * data, const char * pattern) {
+    uint32_t pattern_length = strlen(pattern);
+    if (strncmp(pattern, data, pattern_length) == 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
 
 char url_buf[256];
 int main(void) {
@@ -84,6 +97,7 @@ int main(void) {
     at._uart.printf("AT+RST\r\n");
     
 
+    char buf[1024];
     
     while(1) {
         //at._rx_irq();
@@ -194,10 +208,15 @@ int main(void) {
                 }
                 else if (_esp_status == ESP_RECEIVED) {
                     if (_esp_last_response == AT_RESPONSE_OK) {
-                        _esp_status = ESP_IDLE;
                         app_state++;
                         pc.printf("SEND OK\n");
                         wait(0.1);
+
+                        at.set_custom_prefix("SEND OK");
+                        pc.printf("SENDING DATA...\n");
+                        at._uart.printf(url_buf);
+                        _esp_status = ESP_WAITING;
+
                     }
                     else {
                         // Not the answer we are looking for
@@ -217,6 +236,7 @@ int main(void) {
                         at.set_custom_prefix("RECEIVE OK");
                         _esp_status = ESP_WAITING;
                         app_state = APPSTATE_RECEIVING_RESPONSE;
+                        http_state = HTTPSTATE_CODE;
                         pc.printf("DATA SENT OK\n");
                     }
                     else {
@@ -234,7 +254,37 @@ int main(void) {
                     }
                     else {
                         // Not the answer we are looking for
-                    }
+                        switch(http_state) {
+                            case HTTPSTATE_CODE:
+                                if (str_starts_with(buf, "+IPD")) {
+                                    http_expected_length = 0;
+                                    http_state = HTTPSTATE_HEADER;
+                                }
+                                break;
+
+                            case HTTPSTATE_HEADER:
+                                // Blank line ends buffer section
+                                if (buf[0] == 0) {
+                                    http_state = HTTPSTATE_CONTENT;
+                                    pc.printf("=== CONTENT\n");
+                                }
+                                
+                                else if (str_starts_with(buf, "Content-Length: ")) {
+                                    uint32_t i_h = 16; // cursor in buf
+                                    uint32_t i_b = 0;  // cursor in len_buf
+                                    char len_buf[8];   // will hold the substring containing the number
+                                    while (buf[i_h]) len_buf[i_b++] = buf[i_h++];
+                                    len_buf[i_b] = 0; // null-terminate the string
+                                    
+                                    http_expected_length = atoi(len_buf);
+                                    pc.printf("=== EXP LEN: %d\n", http_expected_length);
+    
+                                }
+                                break;
+                        }
+                        
+
+                        }
                 }
                 break;
 
@@ -263,16 +313,16 @@ int main(void) {
 
         
         if (at.has_data()) {
-            char buf[1024];
             _esp_last_response = at.process(buf);
             _esp_status = ESP_RECEIVED;
             uint32_t buf_len = strlen(buf);
-            if (buf_len < 5) {
+            /*if (buf_len < 5) {
                 pc.printf("Resp: %d - \"%s\" ( ", _esp_last_response, buf);
                 for (uint32_t i=0; i<buf_len; i++) pc.printf("0x%02X ", buf[i]);
                 pc.printf(")\n");
             }
-            else pc.printf("Resp: %d - \"%s\"\n", _esp_last_response, buf);
+            else*/
+                pc.printf("Resp: %d - \"%s\"\n", _esp_last_response, buf);
         }
         else {
             
