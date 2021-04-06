@@ -201,7 +201,8 @@ int main(void) {
 
             case APPSTATE_SEND_DATA:
                 if (_esp_status == ESP_IDLE) {
-                    sprintf(url_buf, "GET /sensor_test/receive.php?value=%f HTTP/1.1\r\nHost: www.n-blocks.net\r\n\r\n", adc.read());
+                    //sprintf(url_buf, "GET /sensor_test/receive.php?value=%f HTTP/1.1\r\nHost: www.n-blocks.net\r\n\r\n", adc.read());
+                    sprintf(url_buf, "GET /sensor_test/hello.html HTTP/1.1\r\nHost: www.n-blocks.net\r\n\r\n", adc.read());
                     
                     at._uart.printf("AT+CIPSEND=%d\r\n", strlen(url_buf));
                     _esp_status = ESP_WAITING;
@@ -247,44 +248,51 @@ int main(void) {
                 
             case APPSTATE_RECEIVING_RESPONSE:
                 if (_esp_status == ESP_RECEIVED) {
-                    if (_esp_last_response == AT_RESPONSE_CUSTOM) {
-                        _esp_status = ESP_IDLE;
-                        app_state = APPSTATE_CLOSING;
-                        pc.printf("DATA RECEIVED OK\n");
-                    }
-                    else {
-                        // Not the answer we are looking for
-                        switch(http_state) {
-                            case HTTPSTATE_CODE:
-                                if (str_starts_with(buf, "+IPD")) {
-                                    http_expected_length = 0;
-                                    http_state = HTTPSTATE_HEADER;
-                                }
-                                break;
+                    switch(http_state) {
+                        case HTTPSTATE_CODE:
+                            if (str_starts_with(buf, "+IPD")) {
+                                http_expected_length = 0;
+                                http_state = HTTPSTATE_HEADER;
+                            }
+                            break;
 
-                            case HTTPSTATE_HEADER:
-                                // Blank line ends buffer section
-                                if (buf[0] == 0) {
-                                    http_state = HTTPSTATE_CONTENT;
-                                    pc.printf("=== CONTENT\n");
-                                }
+                        case HTTPSTATE_HEADER:
+                            // Blank line ends buffer section
+                            if (buf[0] == 0) {
+                                http_state = HTTPSTATE_CONTENT;
+                                // expected_length must always be set
+                                // *BEFORE* changing the mode
+                                at.expected_length = http_expected_length;
+                                at.set_line_mode(AT_LINE_LENGTH);
+                                pc.printf("=== CONTENT\n");
+                            }
+                            
+                            else if (str_starts_with(buf, "Content-Length: ")) {
+                                uint32_t i_h = 16; // cursor in buf
+                                uint32_t i_b = 0;  // cursor in len_buf
+                                char len_buf[8];   // will hold the substring containing the number
+                                while (buf[i_h]) len_buf[i_b++] = buf[i_h++];
+                                len_buf[i_b] = 0; // null-terminate the string
                                 
-                                else if (str_starts_with(buf, "Content-Length: ")) {
-                                    uint32_t i_h = 16; // cursor in buf
-                                    uint32_t i_b = 0;  // cursor in len_buf
-                                    char len_buf[8];   // will hold the substring containing the number
-                                    while (buf[i_h]) len_buf[i_b++] = buf[i_h++];
-                                    len_buf[i_b] = 0; // null-terminate the string
-                                    
-                                    http_expected_length = atoi(len_buf);
-                                    pc.printf("=== EXP LEN: %d\n", http_expected_length);
-    
-                                }
-                                break;
-                        }
-                        
+                                http_expected_length = atoi(len_buf);
+                                pc.printf("=== EXP LEN: %d\n", http_expected_length);
 
-                        }
+                            }
+                            break;
+
+                        case HTTPSTATE_CONTENT:
+                            at.expected_length = 0;
+                            at.set_line_mode(AT_LINE_CRLF);
+                            app_state = APPSTATE_CLOSING;
+                            pc.printf("DATA RECEIVED OK (%d): \"%s\"\n", strlen(buf),  buf);
+                            
+                            // Do something with buffer here
+                            
+                            break;
+                    }
+
+                    _esp_status = ESP_IDLE;
+                        
                 }
                 break;
 
@@ -316,13 +324,8 @@ int main(void) {
             _esp_last_response = at.process(buf);
             _esp_status = ESP_RECEIVED;
             uint32_t buf_len = strlen(buf);
-            /*if (buf_len < 5) {
-                pc.printf("Resp: %d - \"%s\" ( ", _esp_last_response, buf);
-                for (uint32_t i=0; i<buf_len; i++) pc.printf("0x%02X ", buf[i]);
-                pc.printf(")\n");
-            }
-            else*/
-                pc.printf("Resp: %d - \"%s\"\n", _esp_last_response, buf);
+
+            pc.printf("Resp: %d - \"%s\"\n", _esp_last_response, buf);
         }
         else {
             

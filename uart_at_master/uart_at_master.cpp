@@ -5,14 +5,13 @@ DigitalOut led2(LED2);
 DigitalOut led3(LED3);
 DigitalOut led4(LED4);
 
-
-//Serial debugpc(USBTX, USBRX);
+Serial debugpc(USBTX, USBRX);
 
 ATMaster::ATMaster(PinName txPin, PinName rxPin, char * ok_prefix, char * error_prefix): 
     _uart(txPin, rxPin) {
     _at_ok_prefix = ok_prefix;
     _at_error_prefix = error_prefix;
-    _newline_mode = AT_NEWLINE_CRLF;
+    _line_mode = AT_LINE_CRLF;
     
     _buf_message_len = 0;
     _has_data = 0;
@@ -21,6 +20,8 @@ ATMaster::ATMaster(PinName txPin, PinName rxPin, char * ok_prefix, char * error_
     _uart.baud(115200);
 
     _uart.attach(callback(this, &ATMaster::_rx_irq), Serial::RxIrq);
+    
+    expected_length = 0;
 }
 
 void ATMaster::set_init_prefix(char * init_prefix) {
@@ -32,8 +33,19 @@ void ATMaster::set_custom_prefix(char * custom_prefix) {
     _at_custom_prefix = custom_prefix;
 }
 
-void ATMaster::set_newline_mode(_AT_NEWLINE_MODE new_mode) {
-    _newline_mode = new_mode;
+void ATMaster::set_line_mode(_AT_LINE_MODE new_mode) {
+    _line_mode = new_mode;
+    // If we are changing to content length mode, but the buffer has
+    // *already* received the data we will be expecting, we mark it
+    // right away. For this to work, expected_length must be set
+    // BEFORE changing the mode
+    if (new_mode == AT_LINE_LENGTH) {
+        if (_buf_message_len >= expected_length) {
+            _buf_add(0);
+            _has_data++;
+            _buf_message_len = 0;
+        }
+    }
 }
 
 void ATMaster::_rx_irq() {
@@ -43,64 +55,87 @@ void ATMaster::_rx_irq() {
         led1 = !led1;
         if (recv == 0) led4 = !led4;
         
-        if (_newline_mode == AT_NEWLINE_CRLF) {
-            // "\r\n" system:
-            // When '\r' is received, we do not immediately add it to buffer
-            // instead we wait the next char. If next is '\n', we have a new
-            // line, we discard both and mark buffer as containing a line.
-            // If next is anything else, the '\r' is a normal character and we
-            // add both.
+        switch(_line_mode) {
+
+            case AT_LINE_CRLF:
+                // "\r\n" system:
+                // When '\r' is received, we do not immediately add it to buffer
+                // instead we wait the next char. If next is '\n', we have a new
+                // line, we discard both and mark buffer as containing a line.
+                // If next is anything else, the '\r' is a normal character and we
+                // add both.
+                
+                // When '\r' itself is received:
+                if (recv == '\r') {
+                    // if the previous character was also a \r, it was normal data
+                    // and we add it to buffer since it was not yet added
+                    if (_last_received_char == '\r') _buf_add(_last_received_char);
+                }
+                // If we received a '\n' after a '\r':
+                else if ((recv == '\n') && (_last_received_char == '\r')) {
+                    // Both will be discarded and current buffer is marked as a line
+                    // a NULL character is added instead to mark end of string
+
+                    // If we have data, add a null termination
+                    //if (_buf_message_len) {
+                        _buf_add(0);
+                    //}
+                    // but if we don't have any actual data, just keep buffer empty
+
+                    _has_data++;
+                    _buf_message_len = 0;
+                    led2 = !led2;
+                }
+                else {
+                    _buf_add(recv);
+                    _buf_message_len++;
+                }
+                
+                _last_received_char = recv;
+                
+                break;
+        
+
             
-            // When '\r' itself is received:
-            if (recv == '\r') {
-                // if the previous character was also a \r, it was normal data
-                // and we add it to buffer since it was not yet added
-                if (_last_received_char == '\r') _buf_add(_last_received_char);
-            }
-            // If we received a '\n' after a '\r':
-            else if ((recv == '\n') && (_last_received_char == '\r')) {
-                // Both will be discarded and current buffer is marked as a line
-                // a NULL character is added instead to mark end of string
+            case AT_LINE_LF:
+                // "\n" system:
+                // All chars but '\n' are data chars
+                if (recv == '\n') {
+                    // Current '\n' char is discarded and current buffer is marked as a line
+                    // a NULL character is added instead to mark end of string
 
-                // If we have data, add a null termination
-                //if (_buf_message_len) {
+                    // Add a null termination
                     _buf_add(0);
-                //}
-                // but if we don't have any actual data, just keep buffer empty
 
-                _has_data++;
-                _buf_message_len = 0;
-                led2 = !led2;
-            }
-            else {
+                    _has_data++;
+                    _buf_message_len = 0;
+                    led2 = !led2;
+                }
+                else {
+                    _buf_add(recv);
+                    _buf_message_len++;
+                }
+                
+                break;
+                
+            case AT_LINE_LENGTH:
+                // Content length system:
+                // Everything is added to buffer until the expected
+                // length is achieved or operation is cancelled
+                
                 _buf_add(recv);
                 _buf_message_len++;
-            }
-            
-            _last_received_char = recv;
-        }
-            
-        if (_newline_mode == AT_NEWLINE_LF) {
-            // "\n" system:
-            // All chars but '\n' are data chars
-            if (recv == '\n') {
-                // Current '\n' char is discarded and current buffer is marked as a line
-                // a NULL character is added instead to mark end of string
-
-                // If we have data, add a null termination
-                //if (_buf_message_len) {
+                debugpc.putc(recv);
+                debugpc.printf(" (%d)\n", _buf_message_len);
+                if (_buf_message_len >= expected_length) {
                     _buf_add(0);
-                //}
-                // but if we don't have any actual data, just keep buffer empty
-
-                _has_data++;
-                _buf_message_len = 0;
-                led2 = !led2;
-            }
-            else {
-                _buf_add(recv);
-                _buf_message_len++;
-            }
+                    _has_data++;
+                    _buf_message_len = 0;
+                    
+                }
+                
+                
+                break;
         }
         
     }
@@ -118,13 +153,7 @@ _AT_RESPONSE_TYPE ATMaster::process(char * destination_string) {
     
     _AT_RESPONSE_TYPE result;
     _has_data--;
-    
-    /*if (_buf[_buf_tail] == 0) {
-        // Fail-safe: if for some reason there is an empty message in
-        // the buffer, we discard it
-        _buf_take();
-        return AT_RESPONSE_NONE;
-    }*/
+   
     
     if (_wait_init && buf_compare(_at_init_prefix, false)) {
         result = AT_RESPONSE_INIT;
