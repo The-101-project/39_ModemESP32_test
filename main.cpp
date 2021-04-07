@@ -132,6 +132,10 @@ int main(void) {
                         app_state++;
                         pc.printf("SET MODE OK\n");
                     }
+                    else if (_esp_last_response == AT_RESPONSE_ERROR) {
+                        _esp_status = ESP_IDLE;
+                        pc.printf("SET MODE FAIL, TRYING AGAIN\n");
+                    }
                     else {
                         // Not the answer we are looking for
                     }
@@ -149,6 +153,10 @@ int main(void) {
                         app_state++;
                         pc.printf("WIFI OK\n");
                     }
+                    else if (_esp_last_response == AT_RESPONSE_ERROR) {
+                        _esp_status = ESP_IDLE;
+                        pc.printf("WIFI FAIL, TRYING AGAIN\n");
+                    }
                     else {
                         // Not the answer we are looking for
                     }
@@ -165,6 +173,10 @@ int main(void) {
                         _esp_status = ESP_IDLE;
                         app_state++;
                         pc.printf("DNS OK\n");
+                    }
+                    else if (_esp_last_response == AT_RESPONSE_ERROR) {
+                        _esp_status = ESP_IDLE;
+                        pc.printf("DNS FAIL, TRYING AGAIN\n");
                     }
                     else {
                         // Not the answer we are looking for
@@ -192,6 +204,10 @@ int main(void) {
                         _esp_status = ESP_IDLE;
                         app_state++;
                         pc.printf("TCP OK\n");
+                    }
+                    else if (_esp_last_response == AT_RESPONSE_ERROR) {
+                        _esp_status = ESP_IDLE;
+                        pc.printf("TCP FAIL, TRYING AGAIN\n");
                     }
                     else {
                         // Not the answer we are looking for
