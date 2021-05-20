@@ -6,14 +6,14 @@
 #define DATA_PERIOD 60.0         // in seconds
 
 // NUCLEO
-//#define ESP_TX        PD_5
-//#define ESP_RX        PD_6
-//#define ADC_PIN       ?
+#define ESP_TX        D1 //PD_5
+#define ESP_RX        D0 //PD_6
+#define ADC_PIN       A0
 
 // mbed
-#define ESP_TX        p28
-#define ESP_RX        p27
-#define ADC_PIN       p20
+//#define ESP_TX        p28
+//#define ESP_RX        p27
+//#define ADC_PIN       p20
 
 
 
