@@ -78,7 +78,7 @@ To erase all the data, add `receive.php?value=clear` at the end of the url above
 mbed-studio [Switching to GCC](https://os.mbed.com/docs/mbed-studio/current/installing/switching-to-gcc.html)
 
 <img
-src="img/08.PNG"
+src="img/08.png"
 width = 900
 />
 
