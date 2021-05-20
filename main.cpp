@@ -1,14 +1,17 @@
-#define WIFI_SSID     "VM6B342D1"
-#define WIFI_PASSWORD "4nsZcvenfktw"
+//#define WIFI_SSID     "VM6B342D1"
+//#define WIFI_PASSWORD "4nsZcvenfktw"
+
+#define WIFI_SSID     "eir18941350-2.4G"
+#define WIFI_PASSWORD "2jgwpryd"
 
 // Do not use too short a period, for better data visualization later
 // Too much data will result in a giant unusable data table
 #define DATA_PERIOD 60.0         // in seconds
 
 // NUCLEO
-#define ESP_TX        D1 //PD_5
-#define ESP_RX        D0 //PD_6
-#define ADC_PIN       A0
+#define ESP_TX        PA_9  //PA_9 =SERIAL1_TX=D8 //D1 //PD_5
+#define ESP_RX        PA_10 //PA_10=SERIAL1_RX=D2 //D0 //PD_6
+#define ADC_PIN       A0    //PA_0 =ANALOGIN  =A0
 
 // mbed
 //#define ESP_TX        p28
